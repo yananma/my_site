@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+
+
+
+    <div class="comment-write">
+        <div class="comment-write-title underline">写评论</div>
+        <form class="" action="/comment_update/{{comment.id}}/{{blog.id}}" method="post">
+
+          <div class="row">
+              <div class="col-md-12 ">
+                  <div class="contact-question form-group"><textarea class="form-control form-input" name='comment_text' id="comment-textarea" cols="100%" rows="10" tabindex="3">{{comment.content}}</textarea></div>
+              </div>
+          </div>
+
+
+            <div class="contact-submit">
+                <button type="submit" class="btn btn-green btn-bold"><span>评论</span></button>
+            </div>
+
+            {%csrf_token%}
+        </form>
+
+    </div>
+
+
+</body>
+</html>

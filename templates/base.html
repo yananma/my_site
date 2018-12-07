@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>在线教育平台</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- LIBRARY FONT-->
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700,900,300">
+    <link type="text/css" rel="stylesheet" href="/static/assets/font/font-icon/font-awesome-4.4.0/css/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="/static/assets/font/font-icon/font-svg/css/Glyphter.css">
+    <!-- LIBRARY CSS-->
+    <link type="text/css" rel="stylesheet" href="/static/assets/libs/animate/animate.css">
+    <link type="text/css" rel="stylesheet" href="/static/assets/libs/bootstrap-3.3.5/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="/static/assets/libs/owl-carousel-2.0/assets/owl.carousel.css">
+    <link type="text/css" rel="stylesheet" href="/static/assets/libs/selectbox/css/jquery.selectbox.css">
+    <link type="text/css" rel="stylesheet" href="/static/assets/libs/fancybox/css/jquery.fancybox.css">
+    <link type="text/css" rel="stylesheet" href="/static/assets/libs/fancybox/css/jquery.fancybox-buttons.css">
+    <link type="text/css" rel="stylesheet" href="/static/assets/libs/media-element/build/mediaelementplayer.min.css">
+    <script type="text/javascript">
+      function f1(){
+        alert('请先登录再进行评论')
+      }
+    </script>
+
+    {%block custom_css%}
+
+    {%endblock%}
+
+    {%block custom_js%}
+
+    {%endblock%}
+
+    <!-- STYLE CSS    -->
+    <link type="text/css" rel="stylesheet" href="/static/assets/css/color-1.css" id="color-skins">
+    <!--link(type="text/css", rel='stylesheet', href='#', id="color-skins")-->
+    <script src="/static/assets/libs/jquery/jquery-2.1.4.min.js"></script>
+    <script src="/static/assets/libs/js-cookie/js.cookie.js"></script>
+<body><!-- HEADER-->
+<header>
+    <div class="header-topbar">
+        <div class="container">
+            <div class="topbar-left pull-left">
+                <div class="email"><a href="#"><i class="topbar-icon fa fa-envelope-o"></i><span>mayanan@gmail.com</span></a></div>
+                <div class="hotline"><a href="#"><i class="topbar-icon fa fa-phone"></i><span>+84 909 015 345</span></a></div>
+            </div>
+            <div class="topbar-right pull-right">
+
+              {% if user.is_authenticated %}
+              <div class="group-sign-in">
+                <a href="#" class="login">欢迎，{{user.username}}</a>
+                <a href="{% url 'logout' %}" class="logout">注销</a>
+              </div>
+
+              {% else %}
+              <div class="group-sign-in">
+                <a href="{% url 'login' %}" class="login">登录</a>
+                <a href="{% url 'register' %}" class="register">注册</a>
+              </div>
+              {% endif %}
+
+            </div>
+        </div>
+    </div>
+    <div class="header-main homepage-01">
+        <div class="container">
+            <div class="header-main-wrapper">
+                <div class="navbar-heade">
+                    <div class="logo pull-left"><a href="/" class="header-logo"><img src="/static/assets/images/logo-color-11.png" alt=""/></a></div>
+                    <button type="button" data-toggle="collapse" data-target=".navigation" class="navbar-toggle edugate-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <nav class="navigation collapse navbar-collapse pull-right">
+                    <ul class="nav-links nav navbar-nav">
+                        <li {% if request.path == '/' %} class="active" {%endif%}><a href="/" class="main-menu">享学首页</a>
+                        </li>
+
+                        <li {% if request.path == '/course' or request.path == '/course-detail/1' %} class="active" {%endif%}><a href="/course" class="main-menu">享学课程</a>
+                        </li>
+
+                        <li {% if request.path == '/blog-list' or request.path == '/blog-detail/1' %} class="active" {%endif%}><a href="/blog-list" class="main-menu">享学博客</a>
+                        </li>
+
+                        <li  {% if request.path == '/vip' %} class="active" {%endif%}><a href="/vip" class="main-menu">享学会员</a>
+                        </li>
+
+                        <li class="button-search"><p class="main-menu"><i class="fa fa-search"></i></p></li>
+                        <div class="nav-search hide">
+                            <form><input type="text" placeholder="Search" class="searchbox"/>
+                                <button type="submit" class="searchbutton fa fa-search"></button>
+                            </form>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+{%block content%}
+{%endblock%}
+
+
+<!-- FOOTER-->
+<footer>
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-top-wrapper">
+                <div class="footer-top-left"><p class="footer-top-focus">成为享学一员！</p>
+
+                    <p class="footer-top-text">享学课堂，爱学习，更爱分享！</p></div>
+                <div class="footer-top-right">
+                    <a href="/vip"><button onclick="window.location.href='contact.html'" class="btn btn-blue btn-bold"><span>加入会员</span></button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-main">
+        <div class="container">
+            <div class="footer-main-wrapper">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="col-md-3 col-sm-6 col-xs-6 sd380">
+                            <div class="edugate-widget widget">
+                                <div class="title-widget">享学课堂</div>
+                                <div class="content-widget"><p>享学，北京享学志成科技有限公司的在线教育品牌，专注于IT课程的研发和培训.</p>
+
+                                    <div class="info-list">
+                                        <ul class="list-unstyled">
+                                            <li><i class="fa fa-envelope-o"></i><a href="#">admin@xxkt.com</a></li>
+                                            <li><i class="fa fa-phone"></i><a href="#">电话: 3333 222 1111</a></li>
+                                            <li><i class="fa fa-map-marker"></i><a href="#"><p>北京海淀中关村南大街18号</p></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 sd380">
+                            <div class="useful-link-widget widget">
+                                <div class="title-widget">有用链接</div>
+                                <div class="content-widget">
+                                    <div class="useful-link-list">
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <ul class="list-unstyled">
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">讲师</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">课程</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">服务</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">关于</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">社交</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">网站</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <ul class="list-unstyled">
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">公司</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">最新课程</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">合作伙伴</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">最新博客</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">帮助</a></li>
+                                                    <li><i class="fa fa-angle-right"></i><a href="#">政策</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="col-md-3 col-sm-6 col-xs-6 sd380">
+                            <div class="gallery-widget widget">
+                                <div class="title-widget">画廊</div>
+                                <div class="content-widget">
+                                    <div class="gallery-list"><a href="#" class="thumb"><img src="/static/assets/images/gallery/gallery-01.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="/static/assets/images/gallery/gallery-02.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="/static/assets/images/gallery/gallery-03.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="/static/assets/images/gallery/gallery-04.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="/static/assets/images/gallery/gallery-05.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="/static/assets/images/gallery/gallery-06.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="/static/assets/images/gallery/gallery-07.jpg" alt="" class="img-responsive"/></a><a href="#" class="thumb"><img src="/static/assets/images/gallery/gallery-08.jpg"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        alt="" class="img-responsive"/></a></div>
+                                    <div class="clearfix"></div>
+                                    <a href="#" class="view-more">更多&nbsp;<i class="fa fa-angle-double-right mls"></i></a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6 sd380">
+                            <div class="mailing-widget widget">
+                                <div class="title-widget">邮件</div>
+                                <div class="content-wiget"><p>留下您的Email，为你提供最新课程信息.</p>
+
+                                    <form action="/">
+                                        <div class="input-group"><input type="text" placeholder="请输入您的邮箱..." class="form-control form-email-widget"/><span class="input-group-btn"><input type="submit" value="✓" class="btn btn-email"/></span></div>
+                                    </form>
+                                    <p>我们会保证您的隐私信息</p>
+
+                                    <div class="socials"><a href="#" class="facebook"><i class="fa fa-wechat"></i></a><a href="#" class="google"><i class="fa fa-qq"></i></a><a href="#" class="twitter"><i class="fa fa-weibo"></i></a><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a><a href="#" class="blog"><i class="fa fa-rss"></i></a><a href="#" class="dribbble"><i class="fa fa-dribbble"></i></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="bottom" class="hyperlink">
+                <div class="pull-left hyper-left">
+                    <ul class="list-inline">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="courses.html">课程</a></li>
+                        <li><a href="about-us.html">关于</a></li>
+
+                        <li><a href="news.html">资讯</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="pull-right hyper-right">@ 老郭</div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- LOADING-->
+<div class="body-2 loading">
+    <div class="dots-loader"></div>
+</div>
+<script src="/static/assets/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="/static/assets/libs/smooth-scroll/jquery-smoothscroll.js"></script>
+<script src="/static/assets/libs/owl-carousel-2.0/owl.carousel.min.js"></script>
+<script src="/static/assets/libs/appear/jquery.appear.js"></script>
+<script src="/static/assets/libs/count-to/jquery.countTo.js"></script>
+<script src="/static/assets/libs/wow-js/wow.min.js"></script>
+<script src="/static/assets/libs/selectbox/js/jquery.selectbox-0.2.min.js"></script>
+<script src="/static/assets/libs/fancybox/js/jquery.fancybox.js"></script>
+<script src="/static/assets/libs/fancybox/js/jquery.fancybox-buttons.js"></script>
+<!-- MAIN JS-->
+<script src="/static/assets/js/main.js"></script>
+<!-- LOADING SCRIPTS FOR PAGE-->
+<script src="/static/assets/libs/isotope/isotope.pkgd.min.js"></script>
+<script src="/static/assets/libs/isotope/fit-columns.js"></script>
+<script src="/static/assets/js/pages/homepage.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+import os
+
+print(os.path.dirname(__file__))
+
+cd C:\Users\77450\Desktop\atom\django\项目\在线教育\第一遍\elearning\xxkt
+
+cd C:\Users\77450\Desktop\atom\django\项目\在线教育\第二遍\elearning\xxkt
+
+python manage.py runserver
+
+
+mysql -uroot -p123456
