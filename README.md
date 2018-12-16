@@ -4,7 +4,7 @@
 
 后端包括 models.py、admin.py、数据库和后台。models.py 和数据库是对应的，所以创建完 model 要执行 migrate，migrate 就是迁移到数据库，一个 model 就是数据库的一张 table。后台是根据 model 创建的，是通过 admin.py 实现的。后台添加的数据会直接存到数据库里。
 
-前端包括 urls.py、views.py 和所有 html 文件。url 和 view 是对应的，老师每次在 view 里面写完函数就会添加一条 url。url 是页面的入口，view 对应 url，view 前面连接 html 后面连接数据库。打开一个页面的时候，先输入 url，然后 url 找到 view 里对应的函数，view 里的函数的作用都差不多：从数据库里取值，分享到前端页面。banner_list = Banner.objects.all() 这样的语句就是从数据库取值的意思，然后把取到的内容，都一起放到了 ctx 里，通过return render 语句把内容分享到前端页面，从而实现数据库和前端的连接。在 html 里，{{}} 里放的是变量，你可以理解成是取值的意思，比如 {{banner.text_info1}} 可以理解成，取 banner 里的 infor 。
+前端包括 urls.py、views.py 和所有 html 文件。url 和 view 是对应的，每次在 view 里面写完函数就会添加一条 url。url 是页面的入口，view 对应 url，view 前面连接 html 后面连接数据库。打开一个页面的时候，先输入 url，然后 url 找到 view 里对应的函数，view 里的函数的作用都差不多：从数据库里取值，分享到前端页面。banner_list = Banner.objects.all() 这样的语句就是从数据库取值的意思，然后把取到的内容，都一起放到了 ctx 里，通过return render 语句把内容分享到前端页面，从而实现数据库和前端的连接。在 html 里，{{}} 里放的是变量，可以理解成是取值的意思，比如 {{banner.text_info1}} 可以理解成，取 banner 里的 infor 。
 
 (所以说就是，models 创建数据库表格，框架，admin 添加数据到数据库，views 从数据库取数据，整合分享到前端页面，url 连 views，实现页面的展示。)
 
@@ -106,7 +106,7 @@ GET.get 不是从数据库取的值，是从前端 html 的表单里取的，我
 
 取出来查询集
 
-我用两分钟给你说一点 admin 的内容
+说一点 admin 的内容
 
 管理后台
 
@@ -244,15 +244,13 @@ url 和 view，是一种映射关系，一对一或多对一
 
 下面没有 reverse 的里面是 url 路由
 
-我给你举个例子你试一下
-
-就用 logout 吧，还简单一些
+我举个例子，就用 logout 吧，还简单一些
 
 不加 reverse 只写 HttpResponseRedirect 里面用的就是路由不是 name
 
 用 name 更好
 
-所以老师总是加 reverse
+所以总是加 reverse
 
 还有一处是用在 html 里
 
@@ -302,7 +300,7 @@ view 就是接收请求返回结果的
 
 能够出现轮播图、博客、分类这些，都是从view 里来的
 
-你在 index 函数的 ctx 里，把 'banner_list':banner_list, 这句话注释掉
+在 index 函数的 ctx 里，把 'banner_list':banner_list, 这句话注释掉
 
 前面首页就没有轮播图了
 
@@ -428,7 +426,7 @@ request 和 response
 
 还是用 logout 吧
 
-你把 HttpResponseRedirect 注释掉，换成 render 试一下
+把 HttpResponseRedirect 注释掉，换成 render 试一下
 
 然后点击注销看一下差别
 
@@ -476,7 +474,7 @@ view 类
 
 有三个用的是类 class
 
-老师最开始是用的 def login
+最开始是用的 def login
 
 这个其实就引到了要讲的表单了
 
@@ -622,7 +620,7 @@ filter
 
 一个登录、一个注册、一个评论
 
-其实你去 base.html 里搜的话
+其实去 base.html 里搜的话
 
 还有两个
 
@@ -688,9 +686,7 @@ name 的作用
 
 用 register 举例吧
 
-你看一下
-
-数据是怎么从前端页面存到数据库里的
+看一下，数据是怎么从前端页面存到数据库里的
 
 首先是到 register 页面
 
@@ -760,7 +756,7 @@ GET 一般是获取的意思
 
 get
 
-看地址栏，这里会把你输入的信息显示出来
+看地址栏，这里会把输入的信息显示出来
 
 POST.get
 
@@ -796,7 +792,7 @@ POST.get
 
 但是有这么个东西
 
-未绑定表单就是考试的时候刚发到你手里的空白试卷，绑定表单就是你已经答完的试卷，里面都有内容了。但是这个已经答完的试卷是要交的，交了以后你就看不到了，但是还是有的，老师会根据这个绑定表单给你批改，打分，虽然你看不到，但是是有这个东西的
+未绑定表单就是考试的时候刚发到你手里的空白试卷，绑定表单就是你已经答完的试卷，里面都有内容了。但是这个已经答完的试卷是要交的，交了以后你就看不到了，但是还是有的，会根据这个绑定表单给你批改，打分，虽然你看不到，但是是有这个东西的
 
 老师发试卷是一个 get
 
