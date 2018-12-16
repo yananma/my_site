@@ -796,4 +796,4 @@ POST.get
 
 老师发试卷是一个 get
 
-你交试卷是个 post
+交试卷是个 post
