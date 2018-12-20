@@ -1,7 +1,56 @@
 
-创建项目：Django-admin startproject project
+创建项目：Django-admin startproject project，进入目录：cd project
 
-## 基本操作
+设计数据结构：表和字段，也就是类和属性。列出表名称和表下字段名称，明确数据类型。
+
+基本操作：
+1、创建应用，一个羡慕可以创建多个应用，一个应用实现一种功能。
+python manage.py startapp blog
+
+2、创建数据库，create database xx——db;
+use xx_db;
+show tables;
+(查看：show databases;
+删除：drop database xx_db;)
+
+3、配置数据库，更改 settings，
+APP
+TEMPLATES
+DATABASES
+LANGUAGE
+STATIC
+
+4、定义模型，与数据库交互：一个数据表，一个模型。
+一对多，关系写到多的里面，foreignkey
+
+添加数据的本质是创建类的实例。
+
+5、生成数据表
+迁移文件
+python manage.py makemigrations blog
+
+执行迁移
+python manage.py migrate
+
+6、创建超级用户
+python manage.py createsuperuser
+
+7、启动服务器：python manage.py runserver ip:port
+
+8、admin 站点管理
+功能是内容发布，负责添加、修改、删除内容。就是用来管理数据库的数据。
+从模型导包
+注册
+
+9、视图
+有几个页面就有几个视图，视图就是一个函数
+
+10、url
+先修改 project 下面 url，再创建并修改 应用下面 url。
+
+11、创建模板
+创建文件夹
+配置路径，BASE_DIR 就是项目目录。
 
 
 
