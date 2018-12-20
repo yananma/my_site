@@ -2,6 +2,8 @@
 
 框架就是一个半成品，完成了基础工作，可以对其进行配置，可以当做是没有装修的房子。
 
+流程：用户输入 url，通过 url 找到 view，通过 view 找到 model，model 从数据库存取数据，返回给 view，view 返回给 templates，最后展示在浏览器中。
+
 项目主要就是分后端和前端。
 
 后端包括 models.py、admin.py、数据库和后台。models.py 和数据库是对应的，所以创建完 model 要执行 migrate，migrate 就是迁移到数据库，一个 model 就是数据库的一张 table。后台是根据 model 创建的，是通过 admin.py 实现的。后台添加的数据会直接存到数据库里。
