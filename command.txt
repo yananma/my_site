@@ -1,5 +1,5 @@
 
-创建项目：Django-admin startproject project，进入目录：cd project
+创建项目：django-admin startproject project，进入目录：cd project
 
 设计数据结构：表和字段，也就是类和属性。列出表名称和表下字段名称，明确数据类型。
 
