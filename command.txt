@@ -7,7 +7,7 @@
 1、创建应用，一个羡慕可以创建多个应用，一个应用实现一种功能。
 python manage.py startapp blog
 
-2、创建数据库，create database xx——db;
+2、创建数据库，create database xx_db;
 use xx_db;
 show tables;
 (查看：show databases;
