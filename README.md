@@ -33,7 +33,7 @@ elearning 只是一个文件夹，可以当做是个简单的容器
 
 而 myapp 和 xxkt 则是包，就是 package
 
-包和文件夹差不多，区别是包下面会有一个 __init__.py 文件
+包和文件夹差不多，区别是包下面会有一个 \_\_init__.py 文件
 
 本质是一样的，就是放文件
 
@@ -49,7 +49,7 @@ elearning 只是一个文件夹，可以当做是个简单的容器
 
 再说一点数据库的内容
 
-数据库常用的命令有几个，SHOW databases; USE ..._db; SHOW tables; DESC ...db; 这些，最常用的是查询 SELECT * FROM ...
+数据库常用的命令有几个，SHOW databases; USE ...db; SHOW tables; DESC ...db; 这些，最常用的是查询 SELECT * FROM ...
 
 最上面的几张表是项目自带的
 
@@ -79,7 +79,7 @@ foreignkey 是多对一的意思，是类和类之间的关联关系之一，一
 
 多个 course 对应一个 teacher
 
-__str__ 和 verbose_name, verbose_name_plural 
+\_\_str__ 和 verbose_name, verbose_name_plural 
 
 查询语句大部分都是这样：banner_list = Banner.objects.all()，是从数据库里取值的意思
 
