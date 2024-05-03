@@ -41,6 +41,10 @@ elearning 只是一个文件夹，可以当做是个简单的容器
 
 创建项目命令是 Django-admin startproject
 
+创建应用 django-admin startapp front    
+
+（可以通过输入 django-admin \-\-help 查看命令，可以再通过 django-admin startapp --help 查看 startapp 的详细的用法）      
+
 一个项目可以有多个应用，一个应用可以被多个项目重复使用
 
 项目好比是大学，有很多职能部门，应用就好比是学院，执行特定的教学任务。
